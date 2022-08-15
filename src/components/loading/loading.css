@@ -1,0 +1,11 @@
+.loading{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%);
+    width:100px;
+    height: 100px;
+    background-color:#eb3349;
+    border-radius: 20%;
+  
+  }

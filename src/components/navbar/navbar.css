@@ -1,0 +1,27 @@
+.navbar{
+    max-width:1000px;
+    position:fixed;
+    background-color: var(--secondary-bg);
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+    justify-content: space-between;
+    padding:20px 40px;
+    width:100%;
+    border-top: 1px solid lightgray;
+    z-index: 1;
+  }
+
+  .nav-item{
+    color:grey;
+  }
+  
+  .selected{
+    color:#eb3349;
+  }
+  
+  .selected svg{
+    filter: drop-shadow(0px 0px 10px #eb3349);
+  }
+  

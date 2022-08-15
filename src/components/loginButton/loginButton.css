@@ -1,0 +1,16 @@
+.button{
+    border-radius:16px;
+    color:white;
+    padding:20px 120px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+  
+  
+  
+  .login-button{
+    position:absolute;
+    bottom:30px;
+    background-color: var(--red-primary);
+    border: none;
+  }

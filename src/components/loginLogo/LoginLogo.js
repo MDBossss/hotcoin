@@ -1,6 +1,7 @@
 import React from 'react'
-import Fire from './Fire'
-import LoginBlob from './LoginBlob'
+import Fire from "../fire/Fire"
+import LoginBlob from '../loginBlob/LoginBlob'
+import "./loginLogo.css";
 
 const LoginLogo = () => {
   return (

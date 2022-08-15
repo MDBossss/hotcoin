@@ -1,4 +1,5 @@
 import React from 'react'
+import "./loginBlob.css";
 
 const LoginBlob = () => {
   return (

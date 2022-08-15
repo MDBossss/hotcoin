@@ -1,8 +1,9 @@
 import React from 'react'
 import {useEffect} from "react";
 import {Link} from "react-router-dom";
-import LoginLogo from './LoginLogo';
-import LoginButton from './LoginButton';
+import LoginLogo from "../../components/loginLogo/LoginLogo";
+import LoginButton from "../../components/loginButton/LoginButton"
+import "./login.css";
 
 const Login = ({setShowNav}) => {
 
@@ -13,8 +14,9 @@ const Login = ({setShowNav}) => {
   return (
     <div className="login">
         <LoginLogo/>
-        <LoginButton/>
-        <Link to="/" className="guest"><span>Guest Mode</span></Link>
+          <LoginButton/>
+          <Link to="/news" className="guest"><span>Guest Mode</span></Link>
+
     </div>
   )
 }
