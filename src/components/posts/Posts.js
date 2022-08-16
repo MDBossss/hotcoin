@@ -3,8 +3,6 @@ import { useEffect } from 'react';
 import {useState} from "react";
 import Post from '../post/Post';
 import Loading from '../loading/Loading';
-import axios from 'axios';
-import { BsColumnsGap } from 'react-icons/bs';
 
 
 
@@ -12,7 +10,6 @@ const Posts = ({keyword}) => {
 
     const [articles,setArticles] = useState([]);
     const [status,setStatus] = useState("failed");
-    const today = new Date().toISOString().slice(0,10)
 
     var axios = require("axios").default;
     var options = {

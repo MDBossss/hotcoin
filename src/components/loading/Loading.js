@@ -20,7 +20,11 @@ const loadingVariants ={
 
 const Loading = () => {
   return (
-    <motion.div className='loading' variants={loadingVariants} animate="visible" initial="hidden"></motion.div>
+    <div className="loadingContainer">
+      <motion.div className='loading' variants={loadingVariants} animate="visible" initial="hidden"></motion.div>
+      <h2>Loading...</h2>
+    </div>
+
   )
 }
 

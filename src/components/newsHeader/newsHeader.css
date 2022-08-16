@@ -16,6 +16,7 @@
     border:1px solid lightgray;
     border-radius:16px;
     font-family: "Montserrat";
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .search-bar input:focus{

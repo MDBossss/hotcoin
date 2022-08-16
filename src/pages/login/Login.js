@@ -1,11 +1,14 @@
 import React from 'react'
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
 import {Link} from "react-router-dom";
 import LoginLogo from "../../components/loginLogo/LoginLogo";
-import LoginButton from "../../components/loginButton/LoginButton"
 import "./login.css";
+import LoginForm from '../../components/loginForm/LoginForm';
+import RegisterForm from '../../components/registerForm/RegisterForm';
 
 const Login = ({setShowNav}) => {
+
+    const [loginState,setLoginState] = useState(false);
 
     useEffect(() => {
         setShowNav(false);
@@ -14,8 +17,7 @@ const Login = ({setShowNav}) => {
   return (
     <div className="login">
         <LoginLogo/>
-          <LoginButton/>
-          <Link to="/news" className="guest"><span>Guest Mode</span></Link>
+        {!loginState ? <LoginForm loginState={loginState} setLoginState={setLoginState}/> : <RegisterForm loginState={loginState} setLoginState={setLoginState}/>}
 
     </div>
   )
