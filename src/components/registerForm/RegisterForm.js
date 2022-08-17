@@ -16,6 +16,7 @@ const RegisterForm = ({loginState,setLoginState}) => {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
+          setLoginState(!loginState)
         })
         .catch((error) => {
           console.log(error)
@@ -28,7 +29,7 @@ const RegisterForm = ({loginState,setLoginState}) => {
       <input type="email" onChange={(e) => setEmail(e.target.value)}/>
       <label>Password</label>
       <input type="password" onChange={(e) => setPassword(e.target.value)}/>
-      <div  onClick={handleLogin}><Button text="Register"/></div>
+      <div  onClick={handleLogin} className="empty"><Button text="Register"/></div>
       <span onClick={() => setLoginState(!loginState)}>Login</span>
     </div>
   )
