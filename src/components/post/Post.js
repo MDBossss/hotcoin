@@ -3,16 +3,15 @@ import {useState,useContext} from "react";
 import {AiFillStar} from "react-icons/ai";
 import {motion} from "framer-motion"
 import {BsChevronCompactDown} from "react-icons/bs";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { AuthContext } from '../../context/AuthContext'; 
 import { db } from '../../firebase';
 
 import "./post.css";
 
-const Post = ({index,article,author,description,sourceName,title,url,imageUrl}) => {
+const Post = ({article,author,description,sourceName,title,url,imageUrl}) => {
 
   const [starState,setStarState] = useState(false);
-  const [data,setData] = useState([]);
   const {currentUser} = useContext(AuthContext);
 
 
@@ -51,12 +50,8 @@ const Post = ({index,article,author,description,sourceName,title,url,imageUrl}) 
 
   const handleClick = async () =>{
     setStarState(true)
-    console.log(article)
-    console.log("SETTING DATA...")
-    setData([...data,article])
-    console.log(data);
-    await setDoc(doc(db,"users/",currentUser.uid),{
-      articles: {data}
+    await updateDoc(doc(db,"users",currentUser.uid),{
+      articles: arrayUnion(article)
     })
   }
 
