@@ -33,7 +33,7 @@ const Posts = ({keyword}) => {
   return (
     <>  
         {status === "ok" ? articles?.map((article,index) => (
-            <Post key={index} index={index} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
+            <Post key={index} article={article} index={index} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
         )) : <Loading/>}
     </>
     

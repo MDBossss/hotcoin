@@ -1,13 +1,21 @@
 import React from 'react'
-import {useState} from "react";
+import {useState,useContext} from "react";
 import {AiFillStar} from "react-icons/ai";
 import {motion} from "framer-motion"
 import {BsChevronCompactDown} from "react-icons/bs";
+import { doc, setDoc } from "firebase/firestore";
+import { AuthContext } from '../../context/AuthContext'; 
+import { db } from '../../firebase';
+
 import "./post.css";
 
-const Post = ({index,author,description,sourceName,title,url,imageUrl}) => {
+const Post = ({index,article,author,description,sourceName,title,url,imageUrl}) => {
 
   const [starState,setStarState] = useState(false);
+  const [data,setData] = useState([]);
+  const {currentUser} = useContext(AuthContext);
+
+
 
 
   const arrowDownVariants = {
@@ -41,8 +49,15 @@ const Post = ({index,author,description,sourceName,title,url,imageUrl}) => {
 
 
 
-  const handleClick = () =>{
-    setStarState(!starState)
+  const handleClick = async () =>{
+    setStarState(true)
+    console.log(article)
+    console.log("SETTING DATA...")
+    setData([...data,article])
+    console.log(data);
+    await setDoc(doc(db,"users/",currentUser.uid),{
+      articles: {data}
+    })
   }
 
   return (

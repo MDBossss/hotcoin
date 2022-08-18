@@ -1,15 +1,16 @@
 import React from 'react'
-import {useEffect} from "react";
+import {useEffect,useState} from "react";
 import "./bookmarks.css";
 
 const Bookmarks = ({setShowNav}) => {
+
 
   useEffect(() => {
     setShowNav(true);
   },[setShowNav])
 
   return (
-    <div>Bookmarks</div>
+    <h2>Bookmarked posts</h2>
   )
 }
 
