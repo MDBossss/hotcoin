@@ -11,6 +11,7 @@ const NewsHeader = ({setKeyword}) => {
     const handleKeyDown = (event) => {
       if(event.key === "Enter"){
         setKeyword(input);
+        localStorage.setItem("keyword",JSON.stringify(input))
       }
     }
 
@@ -18,7 +19,10 @@ const NewsHeader = ({setKeyword}) => {
     <div className="news-header">
         <span>{today}</span>
         <div className="search-bar">
-            <AiOutlineSearch className="icon" onClick={() => setKeyword(input)}/>
+            <AiOutlineSearch className="icon" onClick={() => {
+              setKeyword(input)
+              localStorage.setItem("keyword",JSON.stringify(input))
+            }}/>
             <input type="text" placeholder="Enter keywords..." 
             onChange={(e) => {
                 setInput(e.target.value)

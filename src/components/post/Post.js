@@ -3,7 +3,7 @@ import {useState,useContext} from "react";
 import {AiFillStar} from "react-icons/ai";
 import {motion} from "framer-motion"
 import {BsChevronCompactDown} from "react-icons/bs";
-import { doc, setDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion } from "firebase/firestore";
 import { AuthContext } from '../../context/AuthContext'; 
 import { db } from '../../firebase';
 

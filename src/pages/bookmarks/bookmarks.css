@@ -1,0 +1,13 @@
+.bookmarks{
+    max-width: 1000px;
+    margin: auto;
+    padding:20px;
+}
+
+.title{
+    padding:10px;
+}
+
+.post:last-child{
+    margin-bottom:100px;
+}

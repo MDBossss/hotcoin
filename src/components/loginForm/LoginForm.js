@@ -22,6 +22,7 @@ const LoginForm = ({loginState,setLoginState}) => {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+
         console.log("signed in")
         setError(false);
         dispatch({type:"LOGIN",payload:user})
@@ -29,6 +30,7 @@ const LoginForm = ({loginState,setLoginState}) => {
       })
       .catch((error) => {
         setError(true);
+        console.log(error)
       });
   }
 

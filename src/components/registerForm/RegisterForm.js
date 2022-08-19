@@ -2,7 +2,8 @@ import React from 'react'
 import {useState} from "react";
 import Button from '../button/Button';
 import {createUserWithEmailAndPassword } from "firebase/auth";
-import {auth} from "../../firebase";
+import { doc, setDoc,arrayUnion} from "firebase/firestore";
+import {auth,db} from "../../firebase";
 
 import "./registerForm.css";
 
@@ -16,6 +17,9 @@ const RegisterForm = ({loginState,setLoginState}) => {
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
           const user = userCredential.user;
+          setDoc(doc(db,"users",user.uid),{
+            articles: null
+          })
           setLoginState(!loginState)
         })
         .catch((error) => {

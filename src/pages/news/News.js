@@ -6,7 +6,8 @@ import "./news.css";
 
 const News = ({setShowNav}) => {
 
-  const [keyword,setKeyword] = useState("bitcoin");
+  const [keyword,setKeyword] = useState("crypto");
+
 
   useEffect(() => {
     setShowNav(true);
