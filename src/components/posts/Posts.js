@@ -10,6 +10,7 @@ const Posts = ({keyword}) => {
 
     const [articles,setArticles] = useState([]);
     const [status,setStatus] = useState("failed");
+    const [starVisible,setStarVisible] = useState(true)
 
     var axios = require("axios").default;
     var options = {
@@ -33,7 +34,7 @@ const Posts = ({keyword}) => {
   return (
     <>  
         {status === "ok" ? articles?.map((article,index) => (
-            <Post key={index} article={article} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
+            <Post key={index} starVisible={starVisible} article={article} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
         )) : <Loading/>}
     </>
     
