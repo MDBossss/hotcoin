@@ -4,13 +4,13 @@ import {AiFillStar} from "react-icons/ai";
 import {motion} from "framer-motion"
 import {BsChevronCompactDown} from "react-icons/bs";
 import {AiFillMinusCircle} from "react-icons/ai";
-import { doc, updateDoc, arrayUnion } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
 import { AuthContext } from '../../context/AuthContext'; 
 import { db } from '../../firebase';
 
 import "./post.css";
 
-const Post = ({article, starVisible ,author,description,sourceName,title,url,imageUrl}) => {
+const Post = ({handleDelete, article, starVisible ,author,description,sourceName,title,url,imageUrl}) => {
 
   const [starState,setStarState] = useState(false);
   const [minusState,setMinusState] = useState(false);
@@ -47,7 +47,7 @@ const Post = ({article, starVisible ,author,description,sourceName,title,url,ima
 
   const minusVariants ={
     hover:{
-      color:"red",
+      color:"#ff0000",
       scale:0.9
     },
     tap:{
@@ -59,7 +59,7 @@ const Post = ({article, starVisible ,author,description,sourceName,title,url,ima
       }
     },
     hidden:{
-      color: !minusState ? "#808080" : "red"
+      color: !minusState ? "#808080" : "#ff0000"
     }
   }
 
@@ -74,7 +74,9 @@ const Post = ({article, starVisible ,author,description,sourceName,title,url,ima
 
   const handleRemove = () => {
     setMinusState(true)
+    handleDelete(article._id)
   }
+
 
   return (
     <div className="post">

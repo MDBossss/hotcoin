@@ -1,6 +1,6 @@
 import React from 'react'
 import {useEffect,useState,useContext} from "react";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { db } from '../../firebase';
 import { AuthContext } from '../../context/AuthContext';
 import Post from '../../components/post/Post';
@@ -30,13 +30,20 @@ const Bookmarks = ({setShowNav}) => {
       }
     })
     
-  },[setShowNav])
+  },[setShowNav,articles])
+
+  const handleDelete = async (id) =>{
+    await updateDoc(doc(db,"users",currentUser.uid),{
+      articles: articles.articles.filter(article => article._id !== id)
+    })
+    this.forceUpdate()
+  }
 
   return (
     <div className="bookmarks">
         <h2 className="title">Bookmarked posts</h2>  
         {status === "ok" ? articles.articles.map((article,index) => (
-            <Post key={index} starVisible={starVisible} article={article} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
+            <Post key={index} handleDelete={handleDelete} starVisible={starVisible} article={article} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
         )) : <Loading/>}
     </div>
   )
