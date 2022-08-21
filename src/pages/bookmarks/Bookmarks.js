@@ -5,6 +5,7 @@ import { db } from '../../firebase';
 import { AuthContext } from '../../context/AuthContext';
 import Post from '../../components/post/Post';
 import Loading from '../../components/loading/Loading';
+import BookmarkAlert from '../../components/BookmarkAlert/BookmarkAlert';
 import "./bookmarks.css";
 
 const Bookmarks = ({setShowNav}) => {
@@ -32,6 +33,8 @@ const Bookmarks = ({setShowNav}) => {
     
   },[setShowNav,articles])
 
+  console.log(articles.articles)
+
   const handleDelete = async (id) =>{
     await updateDoc(doc(db,"users",currentUser.uid),{
       articles: articles.articles.filter(article => article._id !== id)
@@ -41,8 +44,8 @@ const Bookmarks = ({setShowNav}) => {
 
   return (
     <div className="bookmarks">
-        <h2 className="title">Bookmarked posts</h2>  
-        {status === "ok" ? articles.articles.map((article,index) => (
+        {articles.articles?.length < 1 ? <BookmarkAlert/> : <h2 className="title">Bookmarked posts</h2>  }
+        {status === "ok" ? articles.articles?.map((article,index) => (
             <Post key={index} handleDelete={handleDelete} starVisible={starVisible} article={article} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
         )) : <Loading/>}
     </div>
