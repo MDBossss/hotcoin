@@ -1,6 +1,8 @@
 import React from 'react'
 import {FiLogOut} from "react-icons/fi";
 import {BiUserCircle} from "react-icons/bi";
+import {signOut } from "firebase/auth";
+import { auth } from '../../firebase';
 import {BsNewspaper,BsBookmarkStarFill} from "react-icons/bs";
 import {useContext} from "react";
 import {useNavigate} from "react-router-dom";
@@ -12,11 +14,22 @@ const Profile = () => {
     const {currentUser} = useContext(AuthContext)
     let navigate = useNavigate();
 
+    const handleLogout = () => {
+        signOut(auth).then(() =>{
+            //Sign-out successful.
+            localStorage.setItem("user",null)
+            console.log("signed out")
+            navigate("/login")
+        }).catch((error) => {
+            //An error happened
+        })
+    }
+
   return (
     <div className="profile">
         <div className="top">
             <h2>My profile</h2>
-            <div className="logout">
+            <div className="logout" onClick={handleLogout}>
                 <h4>Logout</h4>
                 <FiLogOut/>
             </div>
