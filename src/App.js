@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import News from "./pages/news/News";
 import Profile from "./pages/profile/Profile";
 import Bookmarks from "./pages/bookmarks/Bookmarks";
+import Charts from "./pages/charts/Charts";
 import { AuthContext } from "./context/AuthContext";
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<RequireAuth><News setShowNav={setShowNav}/></RequireAuth>}/>
         <Route path="/bookmarks" element={<RequireAuth><Bookmarks setShowNav={setShowNav}/></RequireAuth>}/>
         <Route path="/profile" element={<RequireAuth><Profile setShowNav={setShowNav}/></RequireAuth>}/>
+        <Route path="/charts" element={<RequireAuth><Charts setShowNav={setShowNav}/></RequireAuth>}/>
       </Routes>
     </>
   );
