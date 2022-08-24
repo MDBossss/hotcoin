@@ -91,7 +91,11 @@ const Post = ({handleDelete, article, starVisible ,author,description,sourceName
       </div>  
       <div className="post-bottom">
           <p>{description}</p>
-          <motion.div className="arrow-down" variants={arrowDownVariants} whileHover="hover" onClick={() => window.open(url)}>
+          <motion.div 
+            className="arrow-down" 
+            variants={arrowDownVariants} 
+            whileHover="hover" 
+            onClick={() => window.open(url)}>
             <BsChevronCompactDown/>
           </motion.div>
       </div>

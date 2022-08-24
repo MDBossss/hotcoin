@@ -3,6 +3,7 @@ import {FiLogOut} from "react-icons/fi";
 import {BiUserCircle} from "react-icons/bi";
 import {signOut } from "firebase/auth";
 import { auth } from '../../firebase';
+import {motion} from "framer-motion";
 import {BsNewspaper,BsBookmarkStarFill} from "react-icons/bs";
 import {useContext} from "react";
 import {useNavigate} from "react-router-dom";
@@ -22,17 +23,37 @@ const Profile = () => {
             navigate("/login")
         }).catch((error) => {
             //An error happened
+            console.log(error)
         })
+    }
+
+    const buttonVariants = {
+        hover:{
+            scale:0.9
+          },
+          tap:{
+            scale:1.5,
+            transition:{
+              type:"spring",
+              stiffness:"1000",
+              damping:"1"
+            }
+          },
     }
 
   return (
     <div className="profile">
         <div className="top">
             <h2>My profile</h2>
-            <div className="logout" onClick={handleLogout}>
+            <motion.div 
+                className="logout" 
+                onClick={handleLogout}
+                variants={buttonVariants}
+                whileHover="hover"
+                >
                 <h4>Logout</h4>
                 <FiLogOut/>
-            </div>
+            </motion.div>
         </div>
         <div className="card">
             <div className="left">
@@ -43,14 +64,22 @@ const Profile = () => {
             </div>
         </div>
         <div className="navigation">
-            <div className="item" onClick={() => navigate("/")}>
+            <motion.div 
+                className="item"
+                variants={buttonVariants}
+                whileHover="hover"
+                onClick={() => navigate("/")}>
                 <BsNewspaper className='icn'/>
                 <h3>News</h3>
-            </div>
-            <div className="item" onClick={() => navigate("/bookmarks")}>
+            </motion.div>
+            <motion.div 
+                className="item"
+                variants={buttonVariants}
+                whileHover="hover" 
+                onClick={() => navigate("/bookmarks")}>
                 <BsBookmarkStarFill className='icn'/>
                 <h3>Bookmarks</h3>
-            </div>
+            </motion.div>
         </div>
     </div>
   )
