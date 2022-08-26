@@ -33,7 +33,6 @@ const Bookmarks = ({setShowNav}) => {
     
   },[setShowNav,articles])
 
-  console.log(articles.articles)
 
   const handleDelete = async (id) =>{
     await updateDoc(doc(db,"users",currentUser.uid),{
