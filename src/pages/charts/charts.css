@@ -1,0 +1,21 @@
+.charts{
+    padding:20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2{
+    margin-bottom: 20px;
+
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}
+
+.heading-right{
+    display: flex;
+    gap: 20px;
+}

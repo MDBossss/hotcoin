@@ -1,0 +1,12 @@
+.change{
+    display: flex;
+    align-items: center;
+}
+
+.positive *{
+    color:green;
+}
+
+.negative *{
+    color: red;
+}
