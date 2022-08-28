@@ -21,7 +21,7 @@ const CoinLabel = ({coin}) => {
             </div>
         </div>
         {expandLabel && <div className="extended-info">
-            <h2>hello</h2>
+                <h2>extended info</h2>
             </div>}
     </div>
   )
