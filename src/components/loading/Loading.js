@@ -1,6 +1,6 @@
 import React from 'react'
 import {motion} from "framer-motion";
-import "./loading.css"
+import "./loading.scss"
 
 
 const loadingVariants ={
@@ -21,7 +21,11 @@ const loadingVariants ={
 const Loading = () => {
   return (
     <div className="loadingContainer">
-      <motion.div className='loading' variants={loadingVariants} animate="visible" initial="hidden"></motion.div>
+      <motion.div 
+      className='loading' 
+      variants={loadingVariants} 
+      animate="visible" 
+      initial="hidden"></motion.div>
       <h2>Loading...</h2>
     </div>
 

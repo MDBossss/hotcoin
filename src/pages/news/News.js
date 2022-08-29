@@ -2,7 +2,7 @@ import React from 'react'
 import {useEffect,useState} from "react";
 import Posts from '../../components/posts/Posts';
 import NewsHeader from '../../components/newsHeader/NewsHeader';
-import "./news.css";
+import "./news.scss";
 
 const News = ({setShowNav}) => {
 

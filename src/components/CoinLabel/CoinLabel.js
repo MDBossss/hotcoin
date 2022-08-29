@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from "react"
 import {motion,AnimatePresence} from "framer-motion";
-import "./coinLabel.css"
+import "./coinLabel.scss"
 import PriceChange from '../PriceChange/PriceChange'
 
 const CoinLabel = ({coin}) => {

@@ -6,7 +6,7 @@ import { AuthContext } from '../../context/AuthContext';
 import Post from '../../components/post/Post';
 import Loading from '../../components/loading/Loading';
 import BookmarkAlert from '../../components/BookmarkAlert/BookmarkAlert';
-import "./bookmarks.css";
+import "./bookmarks.scss";
 
 const Bookmarks = ({setShowNav}) => {
 

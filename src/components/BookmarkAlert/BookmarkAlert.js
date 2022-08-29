@@ -1,5 +1,5 @@
 import React from 'react'
-import "./bookmarkAlert.css";
+import "./bookmarkAlert.scss";
 
 const BookmarkAlert = () => {
   return (

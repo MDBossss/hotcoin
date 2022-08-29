@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState} from "react";
 import {AiOutlineSearch} from "react-icons/ai";
-import "./newsHeader.css";
+import "./newsHeader.scss";
 
 const NewsHeader = ({setKeyword}) => {
 

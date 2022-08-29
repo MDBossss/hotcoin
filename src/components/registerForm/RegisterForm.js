@@ -2,10 +2,10 @@ import React from 'react'
 import {useState} from "react";
 import Button from '../button/Button';
 import {createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc,arrayUnion} from "firebase/firestore";
+import { doc, setDoc} from "firebase/firestore";
 import {auth,db} from "../../firebase";
 
-import "./registerForm.css";
+import "./registerForm.scss";
 
 const RegisterForm = ({loginState,setLoginState}) => {
 

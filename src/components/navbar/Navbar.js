@@ -1,8 +1,7 @@
 import React from 'react'
-import {motion} from "framer-motion";
 import {NavLink} from "react-router-dom";
 import {BsHouseFill,BsFillBarChartFill, BsFillBookmarkFill, BsFillPersonFill} from "react-icons/bs";
-import "./navbar.css";
+import "./navbar.scss";
 
 
 const Navbar = ({showNav}) => {

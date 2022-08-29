@@ -1,5 +1,5 @@
 import React from 'react'
-import "./fire.css";
+import "./fire.scss";
 
 const Fire = () => {
   return (

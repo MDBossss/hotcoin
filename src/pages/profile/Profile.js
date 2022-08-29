@@ -8,7 +8,7 @@ import {BsNewspaper,BsBookmarkStarFill,BsFillBarChartFill} from "react-icons/bs"
 import {useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import { AuthContext } from '../../context/AuthContext';
-import "./profile.css"
+import "./profile.scss"
 
 const Profile = () => {
 
@@ -43,8 +43,8 @@ const Profile = () => {
 
   return (
     <div className="profile">
+        <span className='mdboss'> &copy; MDBoss</span>
         <div className="top">
-            <span className='mdboss'> &copy; MDBoss</span>
             <h2>My profile</h2>
             <motion.div 
                 className="logout" 
@@ -70,7 +70,7 @@ const Profile = () => {
                 variants={buttonVariants}
                 whileHover="hover"
                 onClick={() => navigate("/")}>
-                <BsNewspaper className='icn'/>
+                <BsNewspaper className='icon'/>
                 <h3>News</h3>
             </motion.div>
             <motion.div 
@@ -78,7 +78,7 @@ const Profile = () => {
                 variants={buttonVariants}
                 whileHover="hover" 
                 onClick={() => navigate("/bookmarks")}>
-                <BsBookmarkStarFill className='icn'/>
+                <BsBookmarkStarFill className='icon'/>
                 <h3>Bookmarks</h3>
             </motion.div>
             <motion.div 
@@ -86,7 +86,7 @@ const Profile = () => {
                 variants={buttonVariants}
                 whileHover="hover" 
                 onClick={() => navigate("/charts")}>
-                <BsFillBarChartFill className='icn'/>
+                <BsFillBarChartFill className='icon'/>
                 <h3>Prices</h3>
             </motion.div>
         </div>

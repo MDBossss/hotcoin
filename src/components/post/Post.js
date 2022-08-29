@@ -4,11 +4,11 @@ import {AiFillStar} from "react-icons/ai";
 import {motion} from "framer-motion"
 import {BsChevronCompactDown} from "react-icons/bs";
 import {AiFillMinusCircle} from "react-icons/ai";
-import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import { doc, updateDoc, arrayUnion} from "firebase/firestore";
 import { AuthContext } from '../../context/AuthContext'; 
 import { db } from '../../firebase';
 
-import "./post.css";
+import "./post.scss";
 
 const Post = ({handleDelete, article, starVisible ,author,description,sourceName,title,url,imageUrl}) => {
 

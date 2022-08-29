@@ -1,6 +1,6 @@
 import React from 'react'
 import {IoMdArrowDropdown, IoMdArrowDropup} from "react-icons/io"
-import "./priceChange.css"
+import "./priceChange.scss"
 
 const PriceChange = ({priceChange}) => {
 

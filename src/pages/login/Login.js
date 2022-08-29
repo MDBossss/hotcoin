@@ -1,8 +1,7 @@
 import React from 'react'
 import {useEffect,useState} from "react";
-import {Link} from "react-router-dom";
 import LoginLogo from "../../components/loginLogo/LoginLogo";
-import "./login.css";
+import "./login.scss";
 import LoginForm from '../../components/loginForm/LoginForm';
 import RegisterForm from '../../components/registerForm/RegisterForm';
 

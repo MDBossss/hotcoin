@@ -1,5 +1,5 @@
 import React from 'react'
-import "./loginBlob.css";
+import "./loginBlob.scss";
 
 const LoginBlob = () => {
   return (

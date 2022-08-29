@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios"
 import CoinLabel from "../../components/CoinLabel/CoinLabel"
 import Loading from "../../components/loading/Loading"
-import "./charts.css";
+import "./charts.scss";
 
 const Charts = () => {
 
@@ -32,7 +32,7 @@ const Charts = () => {
             <h3>Price</h3>
           </div>
         </div>
-        {coinsArray?.map((coin) => (<CoinLabel coin={coin}/>))}
+        {coinsArray?.map((coin,index) => (<CoinLabel key={index} coin={coin}/>))}
       </> : <Loading/>}
     </div>
   )
