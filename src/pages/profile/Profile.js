@@ -4,7 +4,7 @@ import {BiUserCircle} from "react-icons/bi";
 import {signOut } from "firebase/auth";
 import { auth } from '../../firebase';
 import {motion} from "framer-motion";
-import {BsNewspaper,BsBookmarkStarFill} from "react-icons/bs";
+import {BsNewspaper,BsBookmarkStarFill,BsFillBarChartFill} from "react-icons/bs";
 import {useContext} from "react";
 import {useNavigate} from "react-router-dom";
 import { AuthContext } from '../../context/AuthContext';
@@ -44,6 +44,7 @@ const Profile = () => {
   return (
     <div className="profile">
         <div className="top">
+            <span className='mdboss'> &copy; MDBoss</span>
             <h2>My profile</h2>
             <motion.div 
                 className="logout" 
@@ -79,6 +80,14 @@ const Profile = () => {
                 onClick={() => navigate("/bookmarks")}>
                 <BsBookmarkStarFill className='icn'/>
                 <h3>Bookmarks</h3>
+            </motion.div>
+            <motion.div 
+                className="item"
+                variants={buttonVariants}
+                whileHover="hover" 
+                onClick={() => navigate("/charts")}>
+                <BsFillBarChartFill className='icn'/>
+                <h3>Prices</h3>
             </motion.div>
         </div>
     </div>

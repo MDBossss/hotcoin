@@ -52,3 +52,8 @@ img{
     gap:5px;
 }
 
+.extended-info{
+    display: flex;
+    justify-content: space-between;
+}
+
