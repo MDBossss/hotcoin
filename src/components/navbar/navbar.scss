@@ -1,16 +1,19 @@
 .navbar{
+  position:fixed;
+  background-color: var(--secondary-bg);
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  border-top: 1px solid lightgray;
+  z-index: 1;
+
+  .nav-wrapper{
     max-width:1000px;
-    position:fixed;
-    background-color: var(--secondary-bg);
-    bottom:0;
-    left:50%;
-    transform:translateX(-50%);
     display:flex;
     justify-content: space-between;
+    margin: auto;
     padding:20px 40px;
-    width:100%;
-    border-top: 1px solid lightgray;
-    z-index: 1;
 
     .nav-item{
       color:grey;
@@ -18,9 +21,12 @@
     
     .selected{
       color:#eb3349;
-
+  
       svg{
         filter: drop-shadow(0px 0px 10px #eb3349);
       }
     }
   }
+}
+
+

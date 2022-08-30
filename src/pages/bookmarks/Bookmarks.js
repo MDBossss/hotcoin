@@ -12,7 +12,7 @@ const Bookmarks = ({setShowNav}) => {
 
   const [articles,setArticles] = useState([])
   const [status,setStatus] = useState("false")
-  const [starVisible,setStarVisible] = useState(false)
+  const [starVisible] = useState(false)
   const {currentUser} = useContext(AuthContext)
 
 
@@ -45,7 +45,17 @@ const Bookmarks = ({setShowNav}) => {
     <div className="bookmarks">
         {articles.articles?.length < 1 ? <BookmarkAlert/> : <h2 className="title">Bookmarked posts</h2>  }
         {status === "ok" ? articles.articles?.map((article,index) => (
-            <Post key={index} handleDelete={handleDelete} starVisible={starVisible} article={article} author={article.author} description={article.summary}  sourceName={article.clean_url} title={article.title} url={article.link} imageUrl={article.media}/>
+            <Post 
+            key={index} 
+            handleDelete={handleDelete} 
+            starVisible={starVisible} 
+            article={article} 
+            author={article.author} 
+            description={article.summary}  
+            sourceName={article.clean_url} 
+            title={article.title} 
+            url={article.link} 
+            imageUrl={article.media}/>
         )) : <Loading/>}
     </div>
   )
