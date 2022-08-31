@@ -1,12 +1,11 @@
-import React from 'react'
-import {motion} from "framer-motion"
+import React from "react";
+import { motion } from "framer-motion";
 import "./button.scss";
 
-const Button = ({text,}) => {
+const Button = ({ text }) => {
   return (
-    <motion.button className='
-    button'>{text}</motion.button>
-  )
-}
+    <motion.button className="button">{text}</motion.button>
+  );
+};
 
-export default Button
+export default Button;
