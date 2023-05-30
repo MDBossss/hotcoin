@@ -4,7 +4,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Hotcoin</h3>
+  <h1 align="center">Hotcoin</h1>
 
   <p align="center">
     A simple cryptocurrency price and news app made with React, SASS and Firebase.
