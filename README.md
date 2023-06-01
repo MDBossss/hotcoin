@@ -22,7 +22,7 @@
 
 ## About The Project
 
-![Screen Shot](images/showcase.png)
+![Screen Shot](images/showcase-1.png)
 
 Hotcoin is a small React project about cryptocurrency data, fetching crypto related news from [newscatherapi.com](https://newscatcherapi.com/news-api) and listing top 100 cryptocurrencies and their prices from [api.coingecko.com/api/v3](https://api.coingecko.com/api/v3/coins/). 
 
